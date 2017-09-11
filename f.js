@@ -11,6 +11,7 @@ class Point {
 
 const pA = new Point(0, 0);
 const pB = new Point(1, 0);
+const pC = new Point(0, 1);
 
 class Line {
     constructor(pointA, pointB) {
@@ -25,5 +26,21 @@ class Line {
     }
 }
 
+class Triangle {
+    constructor(pointA, pointB, pointC) {
+        this.pointA = pointA;
+        this.pointB = pointB;
+        this.pointC = pointC;
+    }
+
+    getPerimeter() {
+        const l1 = new Line(this.pointA, this.pointB);
+        const l2 = new Line(this.pointA, this.pointC);
+        const l3 = new Line(this.pointB, this.pointC);
+        return l1.getLength() + l2.getLength() + l3.getLength();
+    }
+}
+
 const l1 = new Line(pA, pB);
-console.log(l1.getLength());
+const tamGiac = new Triangle(pA, pB, pC);
+console.log(tamGiac.getPerimeter());
