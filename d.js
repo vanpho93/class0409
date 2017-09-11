@@ -1,16 +1,17 @@
-// function Person(ten, tuoi) {
-//     this.name = ten;
-//     this.age = tuoi;
-//     this.sayHello = function() {
-//         // console.log('Xin chao, toi la ' + this.name + ', ' + this.age + ' tuoi');
-//         console.log(`Xin chao toi la ${this.name}, ${this.age} tuoi.`);
-//     }
-// }
+class Company {
+    constructor(name, address) {
+        this.name = name;
+        this.address = address;
+    }
+}
+
+const kpTraining = new Company('Khoa Pham Training', '92 LTR');
 
 class Person {
-    constructor(name, age = 10) {
+    constructor(name, age, company) {
         this.name = name;
         this.age = age;
+        this.company = company;
     }
 
     sayHello() {
@@ -18,5 +19,5 @@ class Person {
     }
 }
 
-const a = new Person('Khoa');
-a.sayHello();
+const a = new Person('Khoa', 20, kpTraining);
+console.log(a.company.address);
